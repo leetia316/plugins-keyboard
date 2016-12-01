@@ -13,6 +13,7 @@
       <input id="text1" readonly="readonly" type="number" style="height:28px;width:98%;outline:none;border:1px solid #1AB6FF;padding-left:3px;"/>
       <br />
       <br />
+      <!--可以让键盘显示在这个位置-->
       <div id="div1">
 
       </div>
@@ -22,6 +23,7 @@
     (function(){
       var input1 = document.getElementById('text1');
       input1.onclick=function() {
+        //创建一个数字键盘，input1必须是用document.getElementById("id"),不能用$("#id")
          new MathKeyBoard(input1);
       }
          

@@ -2,15 +2,18 @@
   //input表示数字输入到的input框
   var MathKeyBoard = function(input, options){
     var body = document.getElementsByTagName('body')[0];
-    //可以用来判断是否存在数字键盘，如果存在……
+    //*可以用来判断是否存在数字键盘，如果存在,为了避免每次重复出现，可以删除
     var DIV_ID = options && options.divId || '__w_l_h_v_c_z_e_r_o_divid';
-    
+    //*使键盘显示在mathKey这个div区域内，因为mathKey是id,所以如果一个项目中要有2个地方显示数字键盘
+    //可以在后面 或(||)上另一个getElementById (因为id是不能重复的，而这个地方又不能改为class)
+    var DIV_GET = document.getElementById("mathKey"); 
+    //?
     // if(document.getElementById(DIV_ID)){
     //   body.removeChild(document.getElementById(DIV_ID));
     // }
      
     this.input = input;
-    //创建一个div
+    //创建一个div,在下面用appendChild添加，如果要添加到div中，则用DIV_GET.appendChild，否则用body
     this.el = document.createElement('div');
      
     var self = this;
@@ -46,7 +49,7 @@
     btnStr += 'float:right;margin-right:5px;text-align:center;color:#fff;';
     btnStr += 'line-height:28px;border-radius:3px;margin-bottom:5px;cursor:pointer;">完成</div>';
      
-    //table
+    //table,如果需要两个数字键盘，可以用if判断DIV_GET的id，DIV_GET.getAttribute("id")
     var tableStr = '<table id="' + TABLE_ID + '" border="0" cellspacing="0" cellpadding="0">';
       tableStr += '<tr><td>1</td><td>2</td><td>3</td></tr>';
       tableStr += '<tr><td>4</td><td>5</td><td>6</td></tr>';
@@ -74,7 +77,7 @@
           self.input.value = newNum;
         }
         //如果是重置的话，可以用self.input.value = "";
-      }
+      }//可以继续添加
     }
      
     if(mobile){
