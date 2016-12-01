@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>1.html</title>
+
+	<!-- demo -->
+	<link href="Keyboard/docs/css/bootstrap.min.css" rel="stylesheet">
+	<link href="Keyboard/docs/css/font-awesome.min.css" rel="stylesheet">
+	<link href="Keyboard/docs/css/demo.css" rel="stylesheet">
+
+	<!-- jQuery & jQuery UI + theme (required) -->
+	<link href="Keyboard/docs/css/jquery-ui.min.css" rel="stylesheet">
+	<script src="Keyboard/docs/js/jquery-latest.min.js"></script>
+	<script src="Keyboard/docs/js/jquery-ui.min.js"></script>
+	<script src="Keyboard/docs/js/bootstrap.min.js"></script>
+
+	<!-- keyboard widget css & script (required) -->
+	<link href="Keyboard/css/keyboard.css" rel="stylesheet">
+	
+	<script src="Keyboard/js/jquery.keyboard.js"></script>
+
+	
+	<!-- initialize keyboard (required) -->
+	<script>
+	/* add some custom popups */
+	
+	$(function(){
+		$('#keyboard').keyboard({
+			display: {   //显示
+				'bksp'   :  "\u2190",
+				'accept' : 'enter'
+			},
+			layout: 'custom',
+			customLayout: {
+				'normal': [
+					//'` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
+					' q w e r t y u i o p {bksp}',
+					'a s d f g h j k l {accept}',
+					'{s} z x c v b n m , . {s}',
+					'{space} {cancel} '
+				],
+				'shift': [
+					' Q W E R T Y U I O P {bksp}',
+					'A S D F G H J K L {accept}',
+					'{s} Z X C V B N M  , . {s}',
+					'{space} {cancel} '
+				]
+			},
+			repeatRate : 0
+		})/*.addAltKeyPopup({
+			// time to hold down a button in ms to trigger a popup
+			holdTime : 500,
+			// event triggered when popup is visible
+			// access the overlay from keyboard.altKeyPopup_$overlay
+			// or the keys container from keyboard.altKeyPopup_$overlay.find('.ui-keyboard-popup')
+			// or the keys from keyboard.altKeyPopup_$overlay.find('.ui-keyboard-button')
+			popupVisible : 'popup-visible'
+		});*//*长按*/
+	});
+	</script>
+
+</head>
+
+<body>
+
+
+	
+	<div class="block2"> <!-- wrapper only needed to center the input -->
+
+		<!-- keyboard input -->
+		<input id="keyboard" type="text">
+
+	</div> <!-- End wrapper -->
+
+	<br class="clear" />
+
+
+</body>
+</html>
